@@ -992,8 +992,7 @@ body {
    z-index: -1;
 }
 
-@media (max-width: 420px) {
-
+@media (max-width: 500px) {
    .menu-marqueeY,
    .menu-marqueeY-R {
       display: none;
