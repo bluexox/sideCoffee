@@ -141,12 +141,14 @@ body {
 }
 
 .topTxt-wrap {
-   width: 100%;
    position: absolute;
-   left: 50%;
    top: 13%;
-   transform: translateX(-50%);
+   left: 0;
+   right: 0;
+   transform: none;
    padding: 0 8%;
+   display: flex;
+   justify-content: center;
 }
 
 .aos-wrap {
