@@ -245,7 +245,7 @@ body {
    }
 
    .mainVisual img {
-      width: 650px;
+      width: 500px;
    }
 
    .main-txtR {
@@ -693,7 +693,7 @@ body {
    background: url(../img/benefit-bg.png) no-repeat center / cover;
    width: 100%;
    height: 105vh;
-   padding: 70px 0;
+   padding: 70px 4% 100px;
    text-align: center;
    position: relative;
 }
@@ -710,7 +710,7 @@ body {
 }
 
 .beneTitle p {
-   font-size: clamp(40px, 3.5vw, 90px);
+   font-size: clamp(36px, 3.5vw, 90px);
    font-weight: 700;
    color: #fff;
    margin-bottom: 30px;
@@ -842,7 +842,7 @@ body {
 
    .beneEnd {
       position: absolute;
-      bottom: 10%;
+      bottom: 5%;
       left: 50%;
    }
 }
@@ -851,7 +851,6 @@ body {
    background: url(../img/interior-bg.png) no-repeat center/cover;
    width: 100%;
    min-height: 80vh;
-   /* 상황 맞게 조정 */
    padding: 80px 0;
    text-align: center;
    position: relative;
@@ -928,7 +927,7 @@ body {
    border: 1px solid #0049E6;
    text-align: left;
    position: absolute;
-   bottom: 5vh;
+   bottom: 3%;
    right: 5vw;
    z-index: 2;
 }
@@ -987,6 +986,14 @@ body {
    z-index: -1;
 }
 
+@media (max-width: 420px) {
+
+   .menu-marqueeY,
+   .menu-marqueeY-R {
+      display: none;
+   }
+}
+
 .menu-marqueeY {
    left: 1%;
 }
@@ -995,7 +1002,6 @@ body {
    right: 1%;
 }
 
-/* 트랙: 세로 마퀴 + 무한 스크롤 */
 .menu-track {
    display: flex;
    flex-direction: column;
@@ -1037,7 +1043,11 @@ body {
    margin: 0 auto;
 }
 
-#menu h3 {
+.menu-wrap {
+   padding: 0 4%;
+}
+
+.menu-wrap h3 {
    color: var(--main-blue);
    font-size: clamp(20px, 2vw, 44px);
    font-weight: 600;
@@ -1231,6 +1241,7 @@ body {
    #always {
       flex-wrap: wrap;
    }
+
    .always-left img {
       content: url(../img/always-mo.png);
       margin-bottom: 40px;
