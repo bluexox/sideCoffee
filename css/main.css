@@ -295,6 +295,10 @@ body {
    .main-txtR {
       display: none;
    }
+   
+   .main-txtL {
+      display: none;
+   }
 }
 
 .marquee-fill {
