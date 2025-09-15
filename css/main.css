@@ -322,12 +322,6 @@ body {
    }
 }
 
-@media (max-width: 375px) {
-   .track img {
-      height: 30px;
-   }
-}
-
 #contact {
    width: 100%;
    z-index: 1000;
@@ -678,6 +672,7 @@ body {
    max-width: none;
 }
 
+
 @keyframes scroll-x-reverse {
    0% {
       transform: translateX(-50%);
@@ -688,6 +683,11 @@ body {
    }
 }
 
+@media (max-width: 375px) {
+   .marquee-nofill .track img {
+      height: 40px;
+   }
+}
 
 #benefit {
    background: url(../img/benefit-bg.png) no-repeat center / cover;
@@ -977,50 +977,58 @@ body {
    overflow: hidden;
 }
 
-.menu-marqueeY {
-   height: 100vh;
+.menu-marqueeY,
+.menu-marqueeY-R {
    position: absolute;
-   left: 1%;
+   top: 0;
+   bottom: 0;
+   width: 70px;
+   overflow: hidden;
    z-index: -1;
+}
+
+.menu-marqueeY {
+   left: 1%;
 }
 
 .menu-marqueeY-R {
-   height: 100vh;
-   position: absolute;
    right: 1%;
-   z-index: -1;
 }
 
-.menu-marqueeY-R .menu-track {
-   display: flex;
-   flex-direction: column;
-   animation: scroll-y 30s linear infinite reverse;
-}
-
+/* 트랙: 세로 마퀴 + 무한 스크롤 */
 .menu-track {
    display: flex;
    flex-direction: column;
-   animation: scroll-y 30s linear infinite;
+   height: max-content;
+   animation: scroll-y var(--dur, 30s) linear infinite;
+   will-change: transform;
 }
 
 .menu-track img {
    width: 70px;
+   height: auto;
    max-width: none;
+   flex: 0 0 auto;
+   display: block;
 }
 
 @keyframes scroll-y {
-   0% {
+   from {
       transform: translateY(0);
    }
 
-   100% {
+   to {
       transform: translateY(-50%);
    }
 }
 
 @media (max-width: 375px) {
-   .track img {
-      width: 20px;
+   .menu-track img {
+      width: 30px;
+   }
+
+   .menu-marqueeY-R {
+      right: -10%;
    }
 }
 
@@ -1061,7 +1069,7 @@ body {
 
 .tab-item {
    font-family: var(--main-font);
-   font-size: clamp(15px, 1.2vw, 30px);
+   font-size: clamp(11px, 1.2vw, 30px);
    text-transform: uppercase;
    flex: 1;
    padding: 15px 20px;
@@ -1073,6 +1081,7 @@ body {
    border-top: 1px solid #0049E6;
    border-bottom: 1px solid #0049E6;
    word-break: break-all;
+   letter-spacing: -0.5;
 }
 
 .tab-menu .tab-item:last-child {
@@ -1218,6 +1227,15 @@ body {
    height: auto;
 }
 
+@media (max-width: 420px) {
+   #always {
+      flex-wrap: wrap;
+   }
+   .always-left img {
+      content: url(../img/always-mo.png);
+      margin-bottom: 40px;
+   }
+}
 
 #fran-intro {
    width: 100%;
@@ -1407,7 +1425,6 @@ body {
 @media (max-width: 860px) {
    .store-card {
       grid-template-columns: 1fr;
-      /* 한 컬럼 */
    }
 
    .store-list {
@@ -1426,7 +1443,6 @@ body {
       object-fit: cover;
    }
 }
-
 
 @media (max-width: 620px) {
    .store-mark {
@@ -1451,6 +1467,7 @@ body {
    padding: 40px 0 160px;
    text-align: center;
    background-color: #fafafa;
+   word-break: keep-all;
 }
 
 #footer p {
